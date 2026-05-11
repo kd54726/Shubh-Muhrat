@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-plum: #8A0F4D;
+  --color-brand-wine: #6E0D3E;
+  --color-brand-gold: #C8B26A;
+  --color-brand-gold-antique: #B89B4F;
+  --color-brand-ivory: #FDF8F2;
+  --color-brand-beige: #EDE2D3;
+  --color-brand-charcoal: #2A2523;
+  --color-brand-rose: #D9A5B3;
+  --color-brand-blush: #F3E7E4;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-ivory text-brand-charcoal antialiased;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+}
+
+@layer utilities {
+  .cinematic-overlay {
+    background: linear-gradient(to bottom, rgba(110, 13, 62, 0.2), rgba(42, 37, 35, 0.6));
+  }
+
+  .bg-radial-vignette {
+    background: radial-gradient(circle, transparent 20%, rgba(42, 37, 35, 0.8) 100%);
+  }
+  
+  .glass-ivory {
+    @apply bg-brand-ivory/80 backdrop-blur-md;
+  }
+}
